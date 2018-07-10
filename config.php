@@ -1,9 +1,15 @@
 <?php
 define ( "RAIZ", dirname ( __FILE__ ) . DIRECTORY_SEPARATOR );
-define ( "ROOTSITE", "Loja_Virtual" . DIRECTORY_SEPARATOR );
-define ( 'Nome_Empresa', 'Empresa Fulano de Tal' );
-define ( "DAO", RAIZ . 'dao' . DIRECTORY_SEPARATOR );
+define ( 'Nome_Empresa', 'Mercadinho Online' );
+define('CONNECT', RAIZ . 'include' . DIRECTORY_SEPARATOR . 'connect.php');
+
+// ACCOUNTS
 define ( "ACCOUNTS", RAIZ . 'accounts' . DIRECTORY_SEPARATOR );
+define ( "ACCOUNTS_MODELS", RAIZ . 'accounts' . DIRECTORY_SEPARATOR . 'models' . 
+DIRECTORY_SEPARATOR);
+define ( "ACCOUNTS_DAO", RAIZ . 'accounts' . DIRECTORY_SEPARATOR . 'dao' . 
+DIRECTORY_SEPARATOR );
+// END ACCOUNTS
 define ( "UPLOAD", RAIZ . 'upload' . DIRECTORY_SEPARATOR );
 
 
