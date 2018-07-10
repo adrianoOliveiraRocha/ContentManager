@@ -1,6 +1,7 @@
 <?php
 include '../config.php';
-include_once MODEL . 'user.php';
+include_once ACCOUNTS . 'models/user.php';
+
 
 if ($_GET['key'] == 'login') {
 	echo "do login";

@@ -20,7 +20,7 @@
         <a class="nav-link" href="#">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="control/admin.php?key=login">Login</a>
+        <a class="nav-link" href="accounts/control.php?key=login">Login</a>
       </li>
         
     </ul>
