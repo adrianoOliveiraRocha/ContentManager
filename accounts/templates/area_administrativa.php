@@ -1,6 +1,9 @@
 <?php
 session_start();
-include_once 'core/utils.php';
+
+if (! $_SESSION['loged']) {
+	header("location:forbidden.php");
+}
 
 ?>
 
@@ -23,18 +26,17 @@ include_once 'core/utils.php';
         <a class="nav-link active" href="#">Active</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" href="../../index.php">
+        	Ir para o Site
+        </a>
       </li>
-
       <li class="nav-item">
-        <?php
-          Utils::isLoged();
-        ?>
+        <a class="nav-link" href="../control.php?key=logout">Sair</a>
       </li>
         
     </ul>
 
-
+    <h1>Área Administrativa</h1>
 
 
 
