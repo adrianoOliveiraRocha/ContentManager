@@ -10,21 +10,7 @@
     <title>Content Manager</title>
   </head>
   <body>
-    
-
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="accounts/control.php?key=login">Login</a>
-      </li>
-        
-    </ul>
-
+   
     <div class="panel panel-default form-central" 
     style="width: 50%; margin-left: auto; margin-right: auto;">
 

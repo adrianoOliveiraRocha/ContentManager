@@ -1,7 +1,7 @@
 <?php
 include_once '../config.php';
-include_once ACCOUNTS_MODELS . 'user.php'; //ok
-include_once ACCOUNTS_DAO . 'userDao.php'; //ok
+include_once ACCOUNTS_MODELS . 'user.php'; 
+include_once ACCOUNTS_DAO . 'userDao.php'; 
 
 
 if (isset($_GET['key'])) {

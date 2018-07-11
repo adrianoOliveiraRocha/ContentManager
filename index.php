@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once 'core/utils.php';
-
 ?>
 
 <!doctype html>
@@ -17,22 +16,29 @@ include_once 'core/utils.php';
   </head>
   <body>
     
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          
+          <?php
+          /*
+            Essa função testa se o usuário está logado e inclue o html necessário para
+            o sistema de login
+          */
+            Utils::isLoged();
+          ?>    
+        </ul>
+      </div>  
+  </nav>
 
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-
-      <li class="nav-item">
-        <?php
-          Utils::isLoged();
-        ?>
-      </li>
-        
-    </ul>
+    
 
 
 
