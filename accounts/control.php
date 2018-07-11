@@ -9,8 +9,12 @@ if (isset($_GET['key'])) {
 		header('Location: templates/entrar.php');
 	} else if($_GET['key'] == 'runLogin'){
 		$email = $_POST['email'];
-		$pwd = $_POST['pwd'];
-		echo UserDAO::test(CONNECT); //ok
+		$password = $_POST['pwd'];
+		if (UserDAO::user_validation(CONNECT, $email, $password)) {
+			echo "exists";
+		} else {
+			echo "no exists";
+		}
 	}
 }
 else {
