@@ -10,6 +10,15 @@ DIRECTORY_SEPARATOR);
 define ( "ACCOUNTS_DAO", RAIZ . 'accounts' . DIRECTORY_SEPARATOR . 'dao' . 
 DIRECTORY_SEPARATOR );
 // END ACCOUNTS
+
+// Category
+define ( "CATEGORY", RAIZ . 'category' . DIRECTORY_SEPARATOR );
+define ( "CATEGORY_MODELS", RAIZ . 'category' . DIRECTORY_SEPARATOR . 'models' . 
+DIRECTORY_SEPARATOR);
+define ( "CATEGORY_DAO", RAIZ . 'category' . DIRECTORY_SEPARATOR . 'dao' . 
+DIRECTORY_SEPARATOR );
+// Category
+
 define ( "UPLOAD", RAIZ . 'upload' . DIRECTORY_SEPARATOR );
 
 

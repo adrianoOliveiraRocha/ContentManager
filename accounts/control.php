@@ -5,8 +5,9 @@ include_once ACCOUNTS_DAO . 'userDao.php';
 
 
 if (isset($_GET['key'])) {
+	
 	if ($_GET['key'] == 'login') {
-		header('Location: templates/entrar.php');
+		header('Location: login');
 	} else if($_GET['key'] == 'runLogin'){
 		$email = $_POST['email'];
 		$password = $_POST['pwd'];
@@ -16,7 +17,7 @@ if (isset($_GET['key'])) {
 			$_SESSION['loged'] = true;
 			$_SESSION['email'] = $email;
 			$_SESSION['password'] = $password;
-			header("location:templates/area_administrativa.php");
+			header("location: admin");
 		} else {
 			echo "no exists";
 		}
@@ -25,7 +26,9 @@ if (isset($_GET['key'])) {
 		$_SESSION['loged'] = false;
 		$_SESSION['email'] = null;
 		$_SESSION['password'] = null;
-		header("location:../index.php");
+		header("location: home");
+	} else if ($_GET['key'] == 'new_category') {
+		echo "New Category";
 	}
 }
 else {

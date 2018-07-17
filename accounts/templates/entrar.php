@@ -19,7 +19,7 @@
       </div>
 
       <div class="panel-body">
-        <form action="../control.php?key=runLogin" method="post">
+        <form action="fazerlogin" method="post">
           <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" class="form-control" name="email">

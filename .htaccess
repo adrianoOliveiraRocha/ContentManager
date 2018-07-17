@@ -1,0 +1,12 @@
+RewriteEngine on
+
+RewriteRule ^home$ index.php
+RewriteRule ^entrar$ accounts/control.php?key=login [QSA]
+RewriteRule ^sair$ accounts/control.php?key=logout [QSA]
+RewriteRule ^login$ accounts/templates/entrar.php
+RewriteRule ^fazerlogin$ accounts/control.php?key=runLogin [QSA]
+RewriteRule ^admin$ accounts/templates/area_administrativa.php [QSA]
+RewriteRule ^proibido$ accounts/templates/stop.php
+
+RewriteRule ^nova_categoria$ category/templates/nova_categoria.php
+RewriteRule ^salvar_categoria$ category/control.php?key=save_category

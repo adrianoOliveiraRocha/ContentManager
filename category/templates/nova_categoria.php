@@ -1,12 +1,12 @@
 <?php
 session_start();
-include_once '../../core/utils.php';
+
 if (isset($_SESSION['loged'])) {
 	if (! $_SESSION['loged']) {
-		header("location:proibido");
+		header("location:forbidden.php");
 	}
 } else {
-	header("location:proibido");
+	header("location:forbidden.php");
 }
 
 ?>
@@ -47,10 +47,7 @@ if (isset($_SESSION['loged'])) {
 		} );
 	</script>
 	<!-- End DataTable -->
-
-
-
-    <title>Content Manager</title>
+	<title>Nova Categoria</title>
   </head>
   <body>
 
@@ -130,40 +127,19 @@ if (isset($_SESSION['loged'])) {
 		</nav>
 
 
-
 		<div class="panel-body" 
-		style="width: 70%; margin-left: auto; 
+		style="width: 50%; margin-left: auto; 
 		margin-right: auto; margin-top: 5%;">
 
-			<!-- Esse código exibe mensagens, se houver -->
-			<?php 
-			if (isset($_GET['alert'])) {
-				Utils::getMessage($_GET['alert']);
-			}
-			?>
-		
-			<table id="myTable" class="display">
-			    <thead>
-			        <tr>
-			            <th>Column 1</th>
-			            <th>Column 2</th>
-			        </tr>
-			    </thead>
-			    <tbody>
-			        <tr>
-			            <td>Row 1 Data 1</td>
-			            <td>Row 1 Data 2</td>
-			        </tr>
-			        <tr>
-			            <td>Row 2 Data 1</td>
-			            <td>Row 2 Data 2</td>
-			        </tr>
-			        <tr>
-			            <td>Nova info</td>
-			            <td>test</td>
-			        </tr>
-			    </tbody>
-			</table>
+			<form action="salvar_categoria" method="POST">
+				<div class="form-group">
+					<label for="email">Nome da Categoria:</label>
+					<input class="form-control" name="category_name">
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Salvar</button>
+			</form> 
+
 		</div>
     </div>
 

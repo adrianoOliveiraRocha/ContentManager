@@ -7,16 +7,13 @@ class Utils{
 	public static function isLoged(){
 		
 		$html_loged = '<li class="nav-item">' . 
-						"<a class='nav-link' href ='accounts/".
-						"control.php?key=logout'>Sair</a>".
+						"<a class='nav-link' href ='sair'>Sair</a>".
 					  "</li>";
 		$html_no_loged = '<li class="nav-item">' . 
-						"<a class='nav-link' href ='accounts/".
-						"control.php?key=login'>Entrar</a>".
+						"<a class='nav-link' href ='entrar'>Entrar</a>".
 					  "</li>";
 		$call_admin = '<li class="nav-item">' . 
-						"<a class='nav-link' href ='accounts/".
-						"templates/area_administrativa.php'>Área Administrativa</a>".
+						"<a class='nav-link' href ='admin'>Área Administrativa</a>".
 					  "</li>";
 		
 		if (isset($_SESSION['loged'])) {
@@ -31,6 +28,20 @@ class Utils{
 			echo $html_no_loged;
 		}
 		
+	}
+
+	public static function getMessage($alert){
+		if ($alert == 'success') {
+			echo '<div class="alert alert-success alert-dismissible">'.
+			       '<button type="button" class="close" data-dismiss="alert">&times;</button>'.
+			       'Operação realizada com sucesso!'.
+			     '</div>';
+		} else if ($alert == 'error'){
+			echo '<div class="alert alert-danger alert-dismissible">'.
+			       '<button type="button" class="close" data-dismiss="alert">&times;</button>'.
+			       'A operação não pode ser realizada!'.
+			     '</div>';
+		}
 	}
 
 }
