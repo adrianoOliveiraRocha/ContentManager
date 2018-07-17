@@ -1,7 +1,7 @@
 <?php
 include_once '../config.php';
-include_once CATEGORY_MODELS . 'category.php'; 
-include_once CATEGORY_DAO . 'categoryDao.php';
+include_once CATALOG_MODELS . 'category.php'; 
+include_once CATALOG_DAO . 'categoryDao.php';
 
 if (isset($_GET['key'])) {
 	switch ($_GET['key']) {

@@ -8,5 +8,5 @@ RewriteRule ^fazerlogin$ accounts/control.php?key=runLogin [QSA]
 RewriteRule ^admin$ accounts/templates/area_administrativa.php [QSA]
 RewriteRule ^proibido$ accounts/templates/stop.php
 
-RewriteRule ^nova_categoria$ category/templates/nova_categoria.php
-RewriteRule ^salvar_categoria$ category/control.php?key=save_category
+RewriteRule ^nova_categoria$ catalog/templates/nova_categoria.php
+RewriteRule ^salvar_categoria$ catalog/control.php?key=save_category

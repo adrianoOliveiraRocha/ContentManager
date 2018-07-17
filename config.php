@@ -12,10 +12,10 @@ DIRECTORY_SEPARATOR );
 // END ACCOUNTS
 
 // Category
-define ( "CATEGORY", RAIZ . 'category' . DIRECTORY_SEPARATOR );
-define ( "CATEGORY_MODELS", RAIZ . 'category' . DIRECTORY_SEPARATOR . 'models' . 
+define ( "CATEGORY", RAIZ . 'catalog' . DIRECTORY_SEPARATOR );
+define ( "CATALOG_MODELS", RAIZ . 'catalog' . DIRECTORY_SEPARATOR . 'models' . 
 DIRECTORY_SEPARATOR);
-define ( "CATEGORY_DAO", RAIZ . 'category' . DIRECTORY_SEPARATOR . 'dao' . 
+define ( "CATALOG_DAO", RAIZ . 'catalog' . DIRECTORY_SEPARATOR . 'dao' . 
 DIRECTORY_SEPARATOR );
 // Category
 
