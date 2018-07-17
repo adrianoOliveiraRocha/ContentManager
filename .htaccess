@@ -10,3 +10,4 @@ RewriteRule ^proibido$ accounts/templates/stop.php
 
 RewriteRule ^nova_categoria$ catalog/templates/nova_categoria.php
 RewriteRule ^salvar_categoria$ catalog/control.php?key=save_category
+RewriteRule ^exibir_categorias$ catalog/templates/show_categories.php

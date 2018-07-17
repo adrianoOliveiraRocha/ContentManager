@@ -1,6 +1,4 @@
 <?php
-include_once RAIZ . 'include/connect.php';
-
 
 class CategoryDAO {
 	private static $connect;
@@ -17,22 +15,13 @@ class CategoryDAO {
 		}
 	}
 
-	// public static function getNome($id) {
-	// 	self::$connect = \Connect::getInstance ();
-	// 	$response = self::$connect->query ( "select nome from categoria where id = {$id}" );
-	// 	$info = $response->fetch ( \PDO::FETCH_ASSOC );
-	// 	self::$connect = null;
-	// 	return $info ['nome'];
-	// }
-
-	// public static function getCategorias($offset) {
-	// 	self::$connect = \Connect::getInstance ();
-	// 	$response = self::$connect->query ( "select * from Categoria order by nome 
-	// 			limit 5 offset {$offset}" );
-	// 	$info = $response->fetchAll ( \PDO::FETCH_ASSOC );
-	// 	self::$connect = null;
-	// 	return $info;
-	// }
+	public static function getAllCategories($offset=0) {
+		self::$connect = Connect::getInstance ();
+		$response = self::$connect->query ( "select * from category" );
+		$categories = $response->fetchAll ( PDO::FETCH_ASSOC );
+		self::$connect = null;
+		return $categories;
+	}
 
 	// public static function getNomes() {
 	// 	self::$connect = \Connect::getInstance ();

@@ -1,5 +1,6 @@
 <?php
 include_once '../config.php';
+include_once RAIZ . 'include/connect.php';
 include_once CATALOG_MODELS . 'category.php'; 
 include_once CATALOG_DAO . 'categoryDao.php';
 
