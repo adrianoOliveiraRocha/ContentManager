@@ -1,9 +1,11 @@
 <?php
 
-class CategoryDAO {
+class CategoryDAO 
+{
 	private static $connect;
 
-	public static function save($category) {
+	public static function save($category) 
+	{
 		$statement = "insert into category (name) values('{$category->getName()}')";
 		self::$connect = Connect::getInstance();
 		$stmt = self::$connect->prepare ( $statement );
@@ -15,7 +17,8 @@ class CategoryDAO {
 		}
 	}
 
-	public static function getAllCategories($offset=0) {
+	public static function getAllCategories($offset=0) 
+	{
 		self::$connect = Connect::getInstance ();
 		$response = self::$connect->query ( "select * from category" );
 		$categories = $response->fetchAll ( PDO::FETCH_ASSOC );

@@ -1,5 +1,9 @@
 <?php
 define ( "RAIZ", dirname ( __FILE__ ) . DIRECTORY_SEPARATOR );
+define ( "PROMOTION_IMAGES", RAIZ . 'images/promotions_images' . 
+	DIRECTORY_SEPARATOR);
+define ( "PROMOTION_IMAGES_THUMB", RAIZ . 'images/promotions_images_thumb' . 
+	DIRECTORY_SEPARATOR);
 define ( 'Nome_Empresa', 'Mercadinho Online' );
 define('CONNECT', RAIZ . 'include' . DIRECTORY_SEPARATOR . 'connect.php');
 

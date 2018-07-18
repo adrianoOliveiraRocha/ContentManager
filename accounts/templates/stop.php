@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h3 style="color: red;">
-		Você não tem permissão para acessar essa página!
+		A sessão expirou! Por favor, faça login novamente
 	</h3>
 </body>
 </html>

@@ -17,7 +17,7 @@ if (isset($_SESSION['loged'])) {
     <!-- links com css e javascript -->
  	<?php include_once '../../accounts/templates/include/links.php'; ?>
 
-	<title>Nova Categoria</title>
+	<title>Nova Promoção</title>
   </head>
   <body>
 
@@ -29,15 +29,16 @@ if (isset($_SESSION['loged'])) {
 		style="width: 50%; margin-left: auto; 
 		margin-right: auto; margin-top: 5%;">
 
-			<form action="salvar_categoria" method="POST">
+			<form action="save_promotion" method="POST"
+			 enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="email">Nome da Categoria:</label>
-					<input class="form-control" name="category_name">
+					<label>Selecione uma Imagem</label>
+					<input type="file" class="form-control" name="promotion_image">
 				</div>
-				
-				<button type="submit" class="btn btn-primary">Salvar</button>
+				<button type="submit" name="submit"
+				class="btn btn-primary">Enviar</button>
 			</form> 
-
+			
 		</div>
     </div>
 

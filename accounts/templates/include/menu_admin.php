@@ -50,10 +50,10 @@
 	        Promoções
 	      </a>
 	      <div class="dropdown-menu">
-	        <a class="dropdown-item" href="#">
+	        <a class="dropdown-item" href="new_promotion">
 	        	Nova Promoção
 	        </a>
-	        <a class="dropdown-item" href="#">
+	        <a class="dropdown-item" href="show_promotions">
 	        	Exibir Promoções
 	        </a>
 	        

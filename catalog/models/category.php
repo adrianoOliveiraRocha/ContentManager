@@ -1,24 +1,30 @@
 <?php
 
 
-class Category {
+class Category 
+{
 	private $id;
 	private $name;
-	public function setId($id){
+
+	public function setId($id)
+	{
 		$this->id = $id;
 	}
-	public function getId() {
+	public function getId() 
+	{
 		return $this->id;
 	}
-	public function setName($name) {
+	public function setName($name) 
+	{
 		$this->name = $name;
 	}
-	public function getName() {
+	public function getName() 
+	{
 		return $this->name;
 	}
 
-	public function save() {
-		$q = "insert into categoria (name) values('{$this->getName()}')";
+	public function save() 
+	{
 		if (CategoryDAO::save($this)) {
 			return true;
 		} else {

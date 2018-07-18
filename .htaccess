@@ -1,5 +1,5 @@
 RewriteEngine on
-
+# Core
 RewriteRule ^home$ index.php
 RewriteRule ^entrar$ accounts/control.php?key=login [QSA]
 RewriteRule ^sair$ accounts/control.php?key=logout [QSA]
@@ -8,6 +8,10 @@ RewriteRule ^fazerlogin$ accounts/control.php?key=runLogin [QSA]
 RewriteRule ^admin$ accounts/templates/area_administrativa.php [QSA]
 RewriteRule ^proibido$ accounts/templates/stop.php
 
+# Catelog
 RewriteRule ^nova_categoria$ catalog/templates/nova_categoria.php
 RewriteRule ^salvar_categoria$ catalog/control.php?key=save_category
 RewriteRule ^exibir_categorias$ catalog/templates/show_categories.php
+RewriteRule ^new_promotion$ catalog/templates/new_promotion.php
+RewriteRule ^save_promotion$ catalog/control.php?key=save_promotion [QSA]
+RewriteRule ^show_promotions$ catalog/templates/show_promotions.php

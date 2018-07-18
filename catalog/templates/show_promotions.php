@@ -12,8 +12,9 @@ if (isset($_SESSION['loged'])) {
 include_once '../../core/utils.php';
 include_once '../../config.php';
 include_once RAIZ . 'include/connect.php';
-include_once CATALOG_DAO . 'categoryDao.php';
-$categories = CategoryDao::getAllCategories();
+include_once CATALOG_DAO . 'promotionDao.php';
+include_once CATALOG_MODELS . 'promotion.php';
+$promotions = PromotionDAO::getAllPromotions();
 
 ?>
 
@@ -22,14 +23,13 @@ $categories = CategoryDao::getAllCategories();
   <head>
     <!-- Links css e javascript -->
   	<?php include_once '../../accounts/templates/include/links.php'; ?>
-
-	<script type="text/javascript">
+  	<script type="text/javascript">
 		$(document).ready( function () {
 		    $('#myTable').DataTable();
 		} );
 	</script>
-	
-    <title>Todas as Categorias</title>
+
+  	<title>Todas as Categorias</title>
   </head>
   <body>
 
@@ -37,9 +37,7 @@ $categories = CategoryDao::getAllCategories();
  		<!-- MENU -->
 	 	<?php include_once '../../accounts/templates/include/menu_admin.php'; ?>
 
-
-
-		<div class="panel-body" 
+	 	<div class="panel-body" 
 		style="width: 70%; margin-left: auto; 
 		margin-right: auto; margin-top: 5%;">
 
@@ -58,21 +56,24 @@ $categories = CategoryDao::getAllCategories();
 			        </tr>
 			    </thead>
 			    <tbody>
-			    	<?php
+
+		    	<?php
 				
-						if ($categories) {
-							foreach ($categories as $category) {
-								echo "<tr>";
-								echo "<td>{$category['idcategory']}</td>";
-								echo "<td>{$category['name']}</td>";
-								echo "</tr>";
-							}
-						}
+				if ($promotions) {
+					foreach ($promotions as $promotion) {
+					echo "<tr>";
+					echo "<td>{$promotion['idpromotion']}</td>";
+					echo "<td><img src='images/promotions_images_thumb/{$promotion['image']}'></td>";
+					echo "</tr>";
+					}
+				}
 						
-					?>
+				?>
 					        
 			    </tbody>
 			</table>
+
+						
 		</div>
     </div>
 
