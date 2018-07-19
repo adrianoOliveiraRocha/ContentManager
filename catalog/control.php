@@ -93,7 +93,11 @@ function save_promotion($file){
 }
 
 function delete_category($idcategory){
-	echo "reveived {$idcategory}";
+	if (Category::delete($idcategory)) {
+		header('location: /ContentManager/admin?alert=success');
+	} else {
+		header('location: /ContentManager/admin?alert=error');
+	}
 }
 
 ?>

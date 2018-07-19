@@ -1,10 +1,10 @@
 <?php
 
-class CategoryDAO 
+class CategoryDAO
 {
 	private static $connect;
 
-	public static function save($category) 
+	public static function save($category)
 	{
 		$statement = "insert into category (name) values('{$category->getName()}')";
 		self::$connect = Connect::getInstance();
@@ -17,7 +17,7 @@ class CategoryDAO
 		}
 	}
 
-	public static function getAllCategories($offset=0) 
+	public static function getAllCategories($offset=0)
 	{
 		self::$connect = Connect::getInstance ();
 		$response = self::$connect->query ( "select * from category" );
@@ -38,7 +38,7 @@ class CategoryDAO
 	// 	self::$connect = \Connect::getInstance ();
 	// 	$stmt = self::$connect->prepare ( "select * from categoria where id = :id" );
 	// 	$stmt->execute ( array (
-	// 			':id' => $id 
+	// 			':id' => $id
 	// 	) );
 	// 	self::$connect = null;
 	// 	if ($stmt->rowCount () > 0) {
@@ -61,18 +61,18 @@ class CategoryDAO
 	// 	}
 	// }
 
-	// public function delete($id) {
-	// 	self::$connect = \Connect::getInstance ();
-	// 	$stmt = self::$connect->prepare ( "delete from categoria where id = {$id}" );
-	// 	$stmt->execute ();
-	// 	self::$connect = null;
-	// 	if ($stmt->rowCount () > 0) {
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
-	
+	public function delete($idcategory) {
+		self::$connect = Connect::getInstance ();
+		$stmt = self::$connect->prepare ( "delete from category where idcategory = {$idcategory}" );
+		$stmt->execute ();
+		self::$connect = null;
+		if ($stmt->rowCount () > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	// public static function quantidadeProdutos($id) {
 	// 	self::$connect = \Connect::getInstance ();
 	// 	$query = self::$connect->query ( "select estoque from produto where idcategoria = {$id}" );
@@ -85,7 +85,7 @@ class CategoryDAO
 	// 	self::$connect = \Connect::getInstance ();
 	// 	$stmt = self::$connect->prepare ( "delete from categoria where id = :id" );
 	// 	$stmt->execute ( array (
-	// 			':id' => $id 
+	// 			':id' => $id
 	// 	) );
 	// 	self::$connect = null;
 	// 	if ($stmt->rowCount () > 0) {

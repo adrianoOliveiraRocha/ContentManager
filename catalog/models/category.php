@@ -1,7 +1,7 @@
 <?php
 
 
-class Category 
+class Category
 {
 	private $id;
 	private $name;
@@ -10,20 +10,20 @@ class Category
 	{
 		$this->id = $id;
 	}
-	public function getId() 
+	public function getId()
 	{
 		return $this->id;
 	}
-	public function setName($name) 
+	public function setName($name)
 	{
 		$this->name = $name;
 	}
-	public function getName() 
+	public function getName()
 	{
 		return $this->name;
 	}
 
-	public function save() 
+	public function save()
 	{
 		if (CategoryDAO::save($this)) {
 			return true;
@@ -39,11 +39,11 @@ class Category
 	// 		return false;
 	// 	}
 	// }
-	// public static function delete($id) {
-	// 	if (CategoriaDAO::deletar($id)) {
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
+	public static function delete($id) {
+		if (CategoryDAO::delete($id)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
