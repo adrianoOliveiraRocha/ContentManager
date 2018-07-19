@@ -11,7 +11,9 @@ require '../vendor/autoload.php';
 
 
 if (isset($_GET['key'])) {
+
 	switch ($_GET['key']) {
+
 		case 'save_category':
 			save_category($_POST['category_name']);
 			break;
@@ -20,8 +22,12 @@ if (isset($_GET['key'])) {
 			save_promotion($_FILES['promotion_image']);
 			break;
 
+		case 'delete_category':
+			delete_category($_GET['id']);
+			break;
+
 		default:
-			# code...
+			echo "we are in default";
 			break;
 	}
 }
@@ -84,6 +90,10 @@ function save_promotion($file){
 	        }
         }
     }
+}
+
+function delete_category($idcategory){
+	echo "reveived {$idcategory}";
 }
 
 ?>

@@ -28,7 +28,7 @@ $categories = CategoryDao::getAllCategories();
 		    $('#myTable').DataTable();
 		} );
 	</script>
-	
+
     <title>Todas as Categorias</title>
   </head>
   <body>
@@ -39,38 +39,40 @@ $categories = CategoryDao::getAllCategories();
 
 
 
-		<div class="panel-body" 
-		style="width: 70%; margin-left: auto; 
+		<div class="panel-body"
+		style="width: 70%; margin-left: auto;
 		margin-right: auto; margin-top: 5%;">
 
 			<!-- Esse código exibe mensagens, se houver -->
-			<?php 
+			<?php
 			if (isset($_GET['alert'])) {
 				Utils::getMessage($_GET['alert']);
 			}
 			?>
-			
+
 			<table id="myTable" class="display">
 			    <thead>
 			        <tr>
 			            <th>ID</th>
 			            <th>Nome</th>
+									<th></th>
 			        </tr>
 			    </thead>
 			    <tbody>
 			    	<?php
-				
+
 						if ($categories) {
 							foreach ($categories as $category) {
 								echo "<tr>";
 								echo "<td>{$category['idcategory']}</td>";
 								echo "<td>{$category['name']}</td>";
+								echo '<td><a href="delete_category/'. $category['idcategory'] .'" class="btn btn-danger" role="button">Deletar</a></td>';
 								echo "</tr>";
 							}
 						}
-						
+
 					?>
-					        
+
 			    </tbody>
 			</table>
 		</div>
