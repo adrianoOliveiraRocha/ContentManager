@@ -47,7 +47,10 @@ function save_promotion($file){
 	$fileType = $file['type'];
 	$fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
 
-	$uploadPath = PROMOTION_IMAGES . basename($fileName);
+	$date = new DateTime();
+	$fileNameUploaded = $date->getTimestamp() . basename($fileName);
+
+	$uploadPath = PROMOTION_IMAGES . $fileNameUploaded;
 
 	if (! in_array($fileExtension, $fileExtensions)) {
         $errors[] = "Esse tipo de arquivo não é permitido " .
@@ -64,12 +67,12 @@ function save_promotion($file){
 
     	if ($didUpload) {
     		$promotion = new Promotion();
-    		$promotion->setImage($fileName);
+    		$promotion->setImage($fileNameUploaded);
 
     		if ($promotion->save()) {
     			//create thumbnail
     			$dest = PROMOTION_IMAGES;
-    			echo Promotion::make_thumb($uploadPath, $dest, $fileName);
+    			echo Promotion::make_thumb($uploadPath, $dest, $fileNameUploaded);
 					header('location: admin?alert=success');
 			} else {
 				header('location: admin?alert=error');
