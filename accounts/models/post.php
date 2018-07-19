@@ -1,6 +1,6 @@
 <?php
 
-class Post:
+class Post{
 	private $id; 
 	private $title;
 	private $text;
@@ -21,3 +21,4 @@ class Post:
 		return $this->text;
 		
 	}
+}

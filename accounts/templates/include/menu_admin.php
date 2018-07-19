@@ -26,7 +26,7 @@
 	        </a>
 	        
 	      </div>
-	    </li
+	    </li>
 
 	    <!-- Dropdown -->
 	    <li class="nav-item dropdown">

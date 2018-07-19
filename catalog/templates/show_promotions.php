@@ -37,43 +37,45 @@ $promotions = PromotionDAO::getAllPromotions();
  		<!-- MENU -->
 	 	<?php include_once '../../accounts/templates/include/menu_admin.php'; ?>
 
-	 	<div class="panel-body" 
-		style="width: 70%; margin-left: auto; 
+	 	<div class="panel-body"
+		style="width: 70%; margin-left: auto;
 		margin-right: auto; margin-top: 5%;">
 
 			<!-- Esse código exibe mensagens, se houver -->
-			<?php 
+			<?php
 			if (isset($_GET['alert'])) {
 				Utils::getMessage($_GET['alert']);
 			}
 			?>
-			
+
 			<table id="myTable" class="display">
 			    <thead>
 			        <tr>
 			            <th>ID</th>
 			            <th>Nome</th>
+									<th></th>
 			        </tr>
 			    </thead>
 			    <tbody>
 
 		    	<?php
-				
+
 				if ($promotions) {
 					foreach ($promotions as $promotion) {
 					echo "<tr>";
-					echo "<td>{$promotion['idpromotion']}</td>";
-					echo "<td><img src='images/promotions_images_thumb/{$promotion['image']}'></td>";
+					echo "<td><a href='#' title='Ver tamanho original'>{$promotion['idpromotion']}</a></td>";
+					echo "<td><img src='images/promotions_images/thumb/{$promotion['image']}'></td>";
+					echo '<td><a href="#" class="btn btn-danger" role="button">Deletar</a></td>';
 					echo "</tr>";
 					}
 				}
-						
+
 				?>
-					        
+
 			    </tbody>
 			</table>
 
-						
+
 		</div>
     </div>
 
