@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once '../../core/utils.php';
+include_once '../../config.php';
 if (isset($_SESSION['loged'])) {
 	if (! $_SESSION['loged']) {
 		header("location:proibido");
@@ -36,19 +37,19 @@ if (isset($_SESSION['loged'])) {
  		<?php include_once 'include/menu_admin.php'; ?>
 
 
-		<div class="panel-body" 
-		style="width: 70%; margin-left: auto; 
+		<div class="panel-body"
+		style="width: 70%; margin-left: auto;
 		margin-right: auto; margin-top: 5%;">
 
 			<!-- Esse código exibe mensagens, se houver -->
-			<?php 
+			<?php
 			if (isset($_GET['alert'])) {
 				Utils::getMessage($_GET['alert']);
 			}
 			?>
-			
+
 			Áre administrativa
-			
+
 		</div>
     </div>
 

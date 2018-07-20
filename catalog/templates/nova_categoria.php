@@ -8,7 +8,7 @@ if (isset($_SESSION['loged'])) {
 } else {
 	header("location:forbidden.php");
 }
-
+include_once '../../config.php';
 ?>
 
 <!doctype html>
@@ -25,8 +25,8 @@ if (isset($_SESSION['loged'])) {
  		<!-- menu admin -->
 	 	<?php include_once '../../accounts/templates/include/menu_admin.php'; ?>
 
-		<div class="panel-body" 
-		style="width: 50%; margin-left: auto; 
+		<div class="panel-body"
+		style="width: 50%; margin-left: auto;
 		margin-right: auto; margin-top: 5%;">
 
 			<form action="salvar_categoria" method="POST">
@@ -34,9 +34,9 @@ if (isset($_SESSION['loged'])) {
 					<label for="email">Nome da Categoria:</label>
 					<input class="form-control" name="category_name">
 				</div>
-				
+
 				<button type="submit" class="btn btn-primary">Salvar</button>
-			</form> 
+			</form>
 
 		</div>
     </div>

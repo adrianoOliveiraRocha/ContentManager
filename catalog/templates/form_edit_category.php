@@ -8,12 +8,21 @@ if (isset($_SESSION['loged'])) {
 } else {
 	header("location:forbidden.php");
 }
+
 require_once '../../config.php';
 require_once CATALOG_DAO . 'categoryDao.php';
 require_once CONNECT;
 $category = CategoryDAO::getThisCategory($_GET['id']);
+
 $inputCategoryName = '<input class="form-control" name="category_name" .
-value="'.$category["name"].'">'
+value="'.$category["name"].'">';
+
+$inputCategoryId = '<input class="form-control" name="idcategory" .
+value="'.$category["idcategory"].'" type="hidden">';
+
+$dominio = getDominio();
+$action_form = getDominio() . 'run_edit_category';
+
 ?>
 
 <!-- HTML -->
@@ -35,11 +44,12 @@ value="'.$category["name"].'">'
 		style="width: 50%; margin-left: auto;
 		margin-right: auto; margin-top: 5%;">
 
-			<form action="salvar_categoria" method="POST">
+			<form action=<?php echo $action_form; ?> method="POST">
 				<div class="form-group">
-					<label for="email">Nome da Categoria:</label>
+					<label>Nome da Categoria:</label>
 					<?php
           echo $inputCategoryName;
+					echo $inputCategoryId;
           ?>
 				</div>
 

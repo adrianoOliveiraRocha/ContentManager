@@ -8,7 +8,7 @@ if (isset($_SESSION['loged'])) {
 } else {
 	header("location:forbidden.php");
 }
-
+include_once '../../config.php';
 ?>
 
 <!doctype html>
@@ -25,8 +25,8 @@ if (isset($_SESSION['loged'])) {
  		<!-- menu admin -->
 	 	<?php include_once '../../accounts/templates/include/menu_admin.php'; ?>
 
-		<div class="panel-body" 
-		style="width: 50%; margin-left: auto; 
+		<div class="panel-body"
+		style="width: 50%; margin-left: auto;
 		margin-right: auto; margin-top: 5%;">
 
 			<form action="save_promotion" method="POST"
@@ -37,8 +37,8 @@ if (isset($_SESSION['loged'])) {
 				</div>
 				<button type="submit" name="submit"
 				class="btn btn-primary">Enviar</button>
-			</form> 
-			
+			</form>
+
 		</div>
     </div>
 

@@ -42,6 +42,31 @@ class CategoryDAO
 
 	}
 
+	public static function update($q) {
+		$response = true;
+		try {
+			self::$connect = Connect::getInstance();
+			$stmt = self::$connect->prepare( $q );
+			$stmt->execute();
+			self::$connect = null;
+			return true;
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+
+	public function delete($idcategory) {
+		self::$connect = Connect::getInstance ();
+		$stmt = self::$connect->prepare ( "delete from category where idcategory = {$idcategory}" );
+		$stmt->execute ();
+		self::$connect = null;
+		if ($stmt->rowCount () > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	// public static function getNomes() {
 	// 	self::$connect = \Connect::getInstance ();
 	// 	$response = self::$connect->query ( "select nome from Categoria order by nome" );
@@ -64,30 +89,6 @@ class CategoryDAO
 	// 		return false;
 	// 	}
 	// }
-
-	// public static function update($q) {
-	// 	self::$connect = \Connect::getInstance ();
-	// 	$stmt = self::$connect->prepare ( $q );
-	// 	$stmt->execute ();
-	// 	self::$connect = null;
-	// 	if ($stmt->rowCount () > 0) {
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
-
-	public function delete($idcategory) {
-		self::$connect = Connect::getInstance ();
-		$stmt = self::$connect->prepare ( "delete from category where idcategory = {$idcategory}" );
-		$stmt->execute ();
-		self::$connect = null;
-		if ($stmt->rowCount () > 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 
 	// public static function quantidadeProdutos($id) {
 	// 	self::$connect = \Connect::getInstance ();

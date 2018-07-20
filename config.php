@@ -23,3 +23,9 @@ DIRECTORY_SEPARATOR );
 // Category
 
 define ( "UPLOAD", RAIZ . 'upload' . DIRECTORY_SEPARATOR );
+
+function getDominio(){
+	$a = explode('/', RAIZ);
+	$dominio = '/' . $a[count($a) - 2] . '/';
+	return $dominio;
+}

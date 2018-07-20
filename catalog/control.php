@@ -32,6 +32,10 @@ if (isset($_GET['key'])) {
 			header("location:{$url}");
 			break;
 
+		case 'run_edit_category':
+			run_edit_category();
+			break;
+
 		default:
 			echo "we are in default";
 			break;
@@ -103,6 +107,20 @@ function delete_category($idcategory){
 		header('location: /ContentManager/admin?alert=success');
 	} else {
 		header('location: /ContentManager/admin?alert=error');
+	}
+}
+
+function run_edit_category(){
+	if (isset($_POST['category_name']) && isset($_POST['idcategory'])) {
+		$dominio = getDominio();
+		$urlsuccess = $dominio . 'admin?alert=success';
+		$urlerror = $dominio . 'admin?alert=error';
+
+		if (Category::update($_POST['category_name'], $_POST['idcategory'])){
+			header("location: {$urlsuccess}");
+		} else {
+			header("location: {$urlerror}");
+		}
 	}
 }
 

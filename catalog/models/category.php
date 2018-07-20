@@ -31,14 +31,14 @@ class Category
 			return false;
 		}
 	}
-	// public function update() {
-	// 	$q = "update categoria set nome = '{$this->nome}' where id = {$this->id}";
-	// 	if (CategoriaDAO::update($q)) {
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
+	public static function update($name, $id) {
+		$q = "update category set name = '{$name}' where idcategory = {$id}";
+		if (CategoryDAO::update($q)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	public static function delete($id) {
 		if (CategoryDAO::delete($id)) {
 			return true;

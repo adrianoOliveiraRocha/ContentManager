@@ -1,3 +1,11 @@
+<?php
+// this codes define urls
+$dominio = getDominio(); 
+$new_category = $dominio . 'nova_categoria';
+$show_categories = $dominio . 'exibir_categorias';
+$new_promotion = $dominio . 'new_promotion';
+$show_promotions = $dominio . 'show_promotions';
+?>
 <!-- menu admin -->
 	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <a class="navbar-brand" href="#">Área Administrativa</a>
@@ -17,11 +25,10 @@
 	        Categorias
 	      </a>
 	      <div class="dropdown-menu">
-	        <a class="dropdown-item"
-	        href="nova_categoria">
+	        <a class="dropdown-item" href= <?php echo $new_category?> >
 	        	Nova Categoria
 	        </a>
-	        <a class="dropdown-item" href="exibir_categorias">
+	        <a class="dropdown-item" href=<?php echo $show_categories; ?>>
 	        	Exibir Categorias
 	        </a>
 
@@ -50,10 +57,10 @@
 	        Promoções
 	      </a>
 	      <div class="dropdown-menu">
-	        <a class="dropdown-item" href="new_promotion">
+	        <a class="dropdown-item" href=<?php echo $new_promotion; ?>>
 	        	Nova Promoção
 	        </a>
-	        <a class="dropdown-item" href="show_promotions">
+	        <a class="dropdown-item" href=<?php echo $show_promotions; ?>>
 	        	Exibir Promoções
 	        </a>
 
