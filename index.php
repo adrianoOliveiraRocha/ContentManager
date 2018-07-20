@@ -1,6 +1,8 @@
 <?php
 session_start();
 include_once 'core/utils.php';
+include_once 'config.php';
+
 ?>
 
 <!doctype html>
@@ -15,7 +17,7 @@ include_once 'core/utils.php';
     <title>Content Manager</title>
   </head>
   <body>
-    
+
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
       <a class="navbar-brand" href="#">Logo</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -26,19 +28,19 @@ include_once 'core/utils.php';
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          
+
           <?php
           /*
             Essa função testa se o usuário está logado e inclue o html necessário para
             o sistema de login
           */
             Utils::isLoged();
-          ?>    
+          ?>
         </ul>
-      </div>  
+      </div>
   </nav>
-  
-  
+
+
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

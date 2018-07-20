@@ -26,6 +26,22 @@ class CategoryDAO
 		return $categories;
 	}
 
+	public static function getThisCategory($idcategory) {
+		self::$connect = Connect::getInstance ();
+		$q = "select * from category where idcategory = :idcategory";
+		$statement = self::$connect->prepare ( $q );
+		$statement->execute(array(':idcategory' => $idcategory));
+		self::$connect = null;
+
+		if ($statement->rowCount() > 0) {
+			$info = $statement->fetch(PDO::FETCH_ASSOC);
+			return $info;
+		} else {
+			return false;
+		}
+
+	}
+
 	// public static function getNomes() {
 	// 	self::$connect = \Connect::getInstance ();
 	// 	$response = self::$connect->query ( "select nome from Categoria order by nome" );

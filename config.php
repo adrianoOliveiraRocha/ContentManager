@@ -1,5 +1,5 @@
 <?php
-define ( "RAIZ", dirname ( __FILE__ ) . DIRECTORY_SEPARATOR );
+define ( "RAIZ", __DIR__ . DIRECTORY_SEPARATOR );
 define ( "PROMOTION_IMAGES", RAIZ . 'images/promotions_images' .
 	DIRECTORY_SEPARATOR);
 define ( "PROMOTION_IMAGES_THUMB", PROMOTION_IMAGES . 'thumb' );

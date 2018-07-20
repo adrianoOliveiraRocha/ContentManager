@@ -12,19 +12,19 @@
 
       	<!-- Dropdown -->
 	    <li class="nav-item dropdown">
-	      <a class="nav-link dropdown-toggle" href="#" 
+	      <a class="nav-link dropdown-toggle" href="#"
 	      id="navbardrop" data-toggle="dropdown">
 	        Categorias
 	      </a>
 	      <div class="dropdown-menu">
-	        <a class="dropdown-item" 
+	        <a class="dropdown-item"
 	        href="nova_categoria">
 	        	Nova Categoria
 	        </a>
 	        <a class="dropdown-item" href="exibir_categorias">
 	        	Exibir Categorias
 	        </a>
-	        
+
 	      </div>
 	    </li>
 
@@ -40,7 +40,7 @@
 	        <a class="dropdown-item" href="#">
 	        	Exibir Produtos
 	        </a>
-	        
+
 	      </div>
 	    </li>
 
@@ -56,7 +56,7 @@
 	        <a class="dropdown-item" href="show_promotions">
 	        	Exibir Promoções
 	        </a>
-	        
+
 	      </div>
 	    </li>
 
@@ -67,8 +67,8 @@
         <a class="nav-link" href="sair">
         	Sair
         </a>
-      </li>    
+      </li>
     </ul>
-  </div>  
+  </div>
 </nav>
 <!-- end of menu admin -->

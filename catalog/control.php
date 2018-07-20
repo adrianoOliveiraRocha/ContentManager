@@ -9,7 +9,6 @@ include_once CATALOG_DAO . 'promotionDao.php';
 
 require '../vendor/autoload.php';
 
-
 if (isset($_GET['key'])) {
 
 	switch ($_GET['key']) {
@@ -24,6 +23,13 @@ if (isset($_GET['key'])) {
 
 		case 'delete_category':
 			delete_category($_GET['id']);
+			break;
+
+		case 'edit_category':
+			$a = explode('/', RAIZ);
+			$dominio = '/' . $a[count($a) - 2];
+			$url = $dominio . '/catalog/templates/form_edit_category.php?id='. $_GET['id'];
+			header("location:{$url}");
 			break;
 
 		default:

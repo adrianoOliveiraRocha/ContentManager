@@ -16,3 +16,4 @@ RewriteRule ^new_promotion$ catalog/templates/new_promotion.php
 RewriteRule ^save_promotion$ catalog/control.php?key=save_promotion [QSA]
 RewriteRule ^show_promotions$ catalog/templates/show_promotions.php
 RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/?$ catalog/control.php?key=$1&id=$2 [NC,L]
+RewriteRule ^editar_categoria/([0-9]+)/?$ catalog/templates/form_edit_category.php?id=$1 [NC,L]

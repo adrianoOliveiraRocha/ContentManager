@@ -56,6 +56,7 @@ $categories = CategoryDao::getAllCategories();
 			            <th>ID</th>
 			            <th>Nome</th>
 									<th></th>
+									<th></th>
 			        </tr>
 			    </thead>
 			    <tbody>
@@ -66,7 +67,10 @@ $categories = CategoryDao::getAllCategories();
 								echo "<tr>";
 								echo "<td>{$category['idcategory']}</td>";
 								echo "<td>{$category['name']}</td>";
-								echo '<td><a href="delete_category/'. $category['idcategory'] .'" class="btn btn-danger" role="button">Deletar</a></td>';
+								echo '<td><a href="edit_category/'. $category['idcategory'] .
+								'" class="btn btn-primary" role="button">Editar</a></td>';
+								echo '<td><a href="delete_category/'. $category['idcategory'] .
+								'" class="btn btn-danger" role="button">Deletar</a></td>';
 								echo "</tr>";
 							}
 						}
