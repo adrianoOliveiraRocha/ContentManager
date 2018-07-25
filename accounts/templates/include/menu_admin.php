@@ -1,6 +1,7 @@
 <?php
 // this codes define urls
 $dominio = getDominio(); 
+$home = $dominio . 'home';
 $new_category = $dominio . 'nova_categoria';
 $show_categories = $dominio . 'exibir_categorias';
 $new_promotion = $dominio . 'new_promotion';
@@ -15,7 +16,7 @@ $show_promotions = $dominio . 'show_promotions';
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
 		<li class="nav-item">
-			<a class="nav-link" href="admin">Home</a>
+			<a class="nav-link" href=<?php echo $home?>>Home</a>
 		</li>
 
       	<!-- Dropdown -->

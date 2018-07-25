@@ -55,8 +55,8 @@ $categories = CategoryDao::getAllCategories();
 			        <tr>
 			            <th>ID</th>
 			            <th>Nome</th>
-									<th></th>
-									<th></th>
+							<th></th>
+							<th></th>
 			        </tr>
 			    </thead>
 			    <tbody>

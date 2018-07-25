@@ -63,7 +63,7 @@ $promotions = PromotionDAO::getAllPromotions();
 				if ($promotions) {
 					foreach ($promotions as $promotion) {
 					echo "<tr>";
-					echo "<td><a href='#' title='Ver tamanho original'>{$promotion['idpromotion']}</a></td>";
+					echo "<td><a href='/edit_promotion' title='Ver tamanho original'>{$promotion['idpromotion']}</a></td>";
 					echo "<td><img src='images/promotions_images/thumb/{$promotion['image']}'></td>";
 					echo '<td><a href="#" class="btn btn-danger" role="button">Deletar</a></td>';
 					echo "</tr>";
